@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
+
+:root {
+  --lightCyan: hsl(193, 38%, 86%);
+  --neonGreen: hsl(150, 100%, 66%);
+  --grayishBlue: hsl(217, 19%, 38%);
+  --darkGrayishBlue: hsl(217, 19%, 24%);
+  --darkBlue: hsl(218, 23%, 16%);
+}
+body {
+  background-color: var(--darkBlue);
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  text-align: center;
+  box-sizing: border-box;
+}
+#container {
+  background-color: var(--darkGrayishBlue);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  transition: .5 ease;
+}
+.contain-margin {
+  margin: 1rem;
+}
+.advice-id {
+  color: var(--neonGreen);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+.advice-text {
+  color: var(--lightCyan);
+  font-size: 1.75rem;
+  font-weight: 800;
+
+}
+.mobile-divider {
+  display: none;
+}
+.desktop-divider {
+  padding: 0 20px;
+}
+.dice-contain {
+  width: 40px;
+  height: 40px;
+  background-color: var(--neonGreen);
+  padding: 10px;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 45px;
+
+  transition: .5s ease;
+}
+.dice-contain:hover{
+  box-shadow: 1px 1px 50px hsl(150, 100%, 66%);
+}
+.dice {
+  width: 20px;
+  height: 20px;
+}
+
+.dice-animate{
+  animation-name: spin;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+@keyframes spin {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--lightCyan);
+}
+.attribution a {
+  color: var( --neonGreen);
+}
+
+@media (max-width: 500px) {
+  #container {
+    width: 90%;
+  }
+  .desktop-divider {
+    display: none;
+  }
+  .mobile-divider {
+    display: block;
+  }
+}
